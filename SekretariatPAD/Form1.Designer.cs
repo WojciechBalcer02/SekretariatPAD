@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sekretariat));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,9 +36,11 @@
             this.password = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textW = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.napisZdj = new System.Windows.Forms.TextBox();
             this.login = new System.Windows.Forms.Button();
+            this.losujObraz = new System.Windows.Forms.LinkLabel();
+            this.blad = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -93,15 +96,6 @@
             this.textW.Size = new System.Drawing.Size(0, 13);
             this.textW.TabIndex = 5;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 223);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "zdjęcie";
-            // 
             // napisZdj
             // 
             this.napisZdj.Location = new System.Drawing.Point(252, 220);
@@ -118,15 +112,49 @@
             this.login.TabIndex = 8;
             this.login.Text = "Zaloguj";
             this.login.UseVisualStyleBackColor = true;
+            this.login.Click += new System.EventHandler(this.login_Click);
+            // 
+            // losujObraz
+            // 
+            this.losujObraz.AutoSize = true;
+            this.losujObraz.LinkColor = System.Drawing.Color.Black;
+            this.losujObraz.Location = new System.Drawing.Point(249, 254);
+            this.losujObraz.Name = "losujObraz";
+            this.losujObraz.Size = new System.Drawing.Size(60, 13);
+            this.losujObraz.TabIndex = 9;
+            this.losujObraz.TabStop = true;
+            this.losujObraz.Text = "Losuj nowy";
+            this.losujObraz.VisitedLinkColor = System.Drawing.Color.Black;
+            // 
+            // blad
+            // 
+            this.blad.AutoSize = true;
+            this.blad.Location = new System.Drawing.Point(30, 382);
+            this.blad.Name = "blad";
+            this.blad.Size = new System.Drawing.Size(0, 13);
+            this.blad.TabIndex = 10;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1.png");
+            this.imageList1.Images.SetKeyName(1, "2.png");
+            this.imageList1.Images.SetKeyName(2, "3.png");
+            this.imageList1.Images.SetKeyName(3, "4.png");
+            this.imageList1.Images.SetKeyName(4, "5.png");
+            this.imageList1.Images.SetKeyName(5, "6.png");
+            this.imageList1.Images.SetKeyName(6, "7.png");
             // 
             // Sekretariat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 423);
+            this.Controls.Add(this.blad);
+            this.Controls.Add(this.losujObraz);
             this.Controls.Add(this.login);
             this.Controls.Add(this.napisZdj);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.textW);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.password);
@@ -149,9 +177,11 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label textW;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox napisZdj;
         private System.Windows.Forms.Button login;
+        private System.Windows.Forms.LinkLabel losujObraz;
+        private System.Windows.Forms.Label blad;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
