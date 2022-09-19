@@ -96,7 +96,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 247);
+            this.label4.Location = new System.Drawing.Point(123, 223);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             // napisZdj
             // 
-            this.napisZdj.Location = new System.Drawing.Point(252, 247);
+            this.napisZdj.Location = new System.Drawing.Point(252, 220);
             this.napisZdj.Name = "napisZdj";
             this.napisZdj.Size = new System.Drawing.Size(172, 20);
             this.napisZdj.TabIndex = 7;
@@ -112,7 +112,7 @@
             // login
             // 
             this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.login.Location = new System.Drawing.Point(474, 340);
+            this.login.Location = new System.Drawing.Point(401, 316);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(75, 23);
             this.login.TabIndex = 8;
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(663, 423);
             this.Controls.Add(this.login);
             this.Controls.Add(this.napisZdj);
             this.Controls.Add(this.label4);
