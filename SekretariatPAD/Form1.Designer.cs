@@ -41,6 +41,8 @@
             this.losujObraz = new System.Windows.Forms.LinkLabel();
             this.blad = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.zobaczZdj = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.zobaczZdj)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,11 +148,20 @@
             this.imageList1.Images.SetKeyName(5, "6.png");
             this.imageList1.Images.SetKeyName(6, "7.png");
             // 
+            // zobaczZdj
+            // 
+            this.zobaczZdj.Location = new System.Drawing.Point(67, 203);
+            this.zobaczZdj.Name = "zobaczZdj";
+            this.zobaczZdj.Size = new System.Drawing.Size(136, 50);
+            this.zobaczZdj.TabIndex = 11;
+            this.zobaczZdj.TabStop = false;
+            // 
             // Sekretariat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 423);
+            this.Controls.Add(this.zobaczZdj);
             this.Controls.Add(this.blad);
             this.Controls.Add(this.losujObraz);
             this.Controls.Add(this.login);
@@ -164,6 +175,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sekretariat";
             this.Text = "Sekretariat";
+            ((System.ComponentModel.ISupportInitialize)(this.zobaczZdj)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +194,7 @@
         private System.Windows.Forms.LinkLabel losujObraz;
         private System.Windows.Forms.Label blad;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox zobaczZdj;
     }
 }
 
