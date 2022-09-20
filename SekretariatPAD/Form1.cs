@@ -73,20 +73,18 @@ namespace SekretariatPAD
             Regex rh = new Regex(haslo);
             Regex ro = new Regex(textObrazka);
 
-            
+
             
 
-                
+
             if ((rn.IsMatch(user.Text)) && (rh.IsMatch(password.Text)) && (ro.IsMatch(napisZdj.Text)))
             {
 
                 blad.Text = "dobrze";
+                this.Hide();
+                form2 = new Form2();
+                form2.Show();
 
-                //form1 = new Form();
-                //form1.Close();
-                //form2 = new Form2();
-                //form2.Activate();
-                //form2.Show();
             }
             else
             {
