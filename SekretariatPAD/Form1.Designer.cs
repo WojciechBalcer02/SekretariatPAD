@@ -127,6 +127,7 @@
             this.losujObraz.TabStop = true;
             this.losujObraz.Text = "Losuj nowy";
             this.losujObraz.VisitedLinkColor = System.Drawing.Color.Black;
+            this.losujObraz.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.losujObraz_LinkClicked);
             // 
             // blad
             // 

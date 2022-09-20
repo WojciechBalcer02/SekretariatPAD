@@ -13,6 +13,7 @@ namespace SekretariatPAD
 {
     public partial class Sekretariat : Form
     {
+        public Form2 form2;
         int liczba;
         String textObrazka;
         public Sekretariat()
@@ -21,9 +22,8 @@ namespace SekretariatPAD
 
             Random rnd = new Random();
 
-            int poczatek = 0;
-            int koniec = 7;
-            liczba = rnd.Next(poczatek, koniec);
+            
+            liczba = rnd.Next(7);
 
             textW.Text = "Wpisz znaki które widzisz na poniższym obrazku, aby kontynuować";
 
@@ -74,12 +74,21 @@ namespace SekretariatPAD
             if ((rn.IsMatch(user.Text)) && (rh.IsMatch(password.Text)) && (ro.IsMatch(napisZdj.Text)))
             {
                 blad.Text = "dobrze";
+                form2 = new Form2();
+                form2.Show();
             }
             else
             {
                 blad.Text = "Błąd źle podana nazwa, hasło lub weryfikacja czy nie jesteś robotem";
                 blad.ForeColor = Color.Red;
             }
+        }
+
+        private void losujObraz_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Random rnd = new Random();
+            liczba = rnd.Next(7);
+            zobaczZdj.Image = imageList1.Images[liczba];
         }
     }
 }
