@@ -14,12 +14,13 @@ namespace SekretariatPAD
     public partial class Sekretariat : Form
     {
         public Form2 form2;
+        public Form form1;
         int liczba;
         String textObrazka;
         public Sekretariat()
         {
             InitializeComponent();
-
+            
             Random rnd = new Random();
 
             
@@ -71,16 +72,27 @@ namespace SekretariatPAD
             Regex rn = new Regex(nazwa);
             Regex rh = new Regex(haslo);
             Regex ro = new Regex(textObrazka);
+
+            
+            
+
+                
             if ((rn.IsMatch(user.Text)) && (rh.IsMatch(password.Text)) && (ro.IsMatch(napisZdj.Text)))
             {
+
                 blad.Text = "dobrze";
-                form2 = new Form2();
-                form2.Show();
+
+                //form1 = new Form();
+                //form1.Close();
+                //form2 = new Form2();
+                //form2.Activate();
+                //form2.Show();
             }
             else
             {
                 blad.Text = "Błąd źle podana nazwa, hasło lub weryfikacja czy nie jesteś robotem";
                 blad.ForeColor = Color.Red;
+                
             }
         }
 
