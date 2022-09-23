@@ -32,9 +32,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.search = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.szukaj = new System.Windows.Forms.TextBox();
+            this.kryterium = new System.Windows.Forms.ComboBox();
+            this.daneUcznia = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -63,9 +63,9 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.search);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.comboBox2);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.szukaj);
+            this.tabPage1.Controls.Add(this.kryterium);
+            this.tabPage1.Controls.Add(this.daneUcznia);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -86,28 +86,36 @@
             this.search.UseVisualStyleBackColor = true;
             this.search.Click += new System.EventHandler(this.search_Click);
             // 
-            // textBox1
+            // szukaj
             // 
-            this.textBox1.Location = new System.Drawing.Point(460, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 4;
+            this.szukaj.Location = new System.Drawing.Point(460, 55);
+            this.szukaj.Name = "szukaj";
+            this.szukaj.Size = new System.Drawing.Size(137, 20);
+            this.szukaj.TabIndex = 4;
             // 
-            // comboBox2
+            // kryterium
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(239, 54);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(154, 21);
-            this.comboBox2.TabIndex = 3;
+            this.kryterium.FormattingEnabled = true;
+            this.kryterium.Items.AddRange(new object[] {
+            "zaczyna się od",
+            "równe",
+            "zawiera"});
+            this.kryterium.Location = new System.Drawing.Point(239, 54);
+            this.kryterium.Name = "kryterium";
+            this.kryterium.Size = new System.Drawing.Size(154, 21);
+            this.kryterium.TabIndex = 3;
             // 
-            // comboBox1
+            // daneUcznia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(29, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 21);
-            this.comboBox1.TabIndex = 2;
+            this.daneUcznia.FormattingEnabled = true;
+            this.daneUcznia.Items.AddRange(new object[] {
+            "Imię",
+            "Nazwisko",
+            "Klasa"});
+            this.daneUcznia.Location = new System.Drawing.Point(29, 55);
+            this.daneUcznia.Name = "daneUcznia";
+            this.daneUcznia.Size = new System.Drawing.Size(154, 21);
+            this.daneUcznia.TabIndex = 2;
             // 
             // label1
             // 
@@ -242,9 +250,9 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button search;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox szukaj;
+        private System.Windows.Forms.ComboBox kryterium;
+        private System.Windows.Forms.ComboBox daneUcznia;
         private System.Windows.Forms.Label label1;
     }
 }
