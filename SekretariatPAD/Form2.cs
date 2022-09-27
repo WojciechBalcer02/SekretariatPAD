@@ -15,6 +15,9 @@ namespace SekretariatPAD
     {
         string path = @"uczen.txt";
         StreamReader sr;
+        String I;
+        String N;
+        String K;
         public Form2()
         {
             InitializeComponent();
@@ -64,7 +67,7 @@ namespace SekretariatPAD
         {
             if (File.Exists(path))
             {
-                sr = new StreamReader(path);
+                sr = new StreamReader(path, true);
             }
             else
             {
@@ -72,6 +75,26 @@ namespace SekretariatPAD
             }
             String textRead = sr.ReadToEnd();
             richTextBox1.Text = textRead;
+
+            /*if (daneUcznia.SelectedItem.Equals("Imie"))
+            {
+                I = szukaj.Text;
+                
+                if (true)
+                {
+                    richTextBox1.Text = I;
+                }
+                
+            }
+            else if (daneUcznia.SelectedItem.Equals("Nazwisko"))
+            {
+                N = szukaj.Text;
+            }
+            else if (daneUcznia.SelectedItem.Equals("Klasa"))
+            {
+                K = szukaj.Text;
+            }*/
+            sr.Close();
         }
     }
 }
