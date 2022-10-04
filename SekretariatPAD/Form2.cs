@@ -32,7 +32,7 @@ namespace SekretariatPAD
         {
             
             StreamWriter sw;
-            String tekstdozapisu = name.Text + " " + lastname.Text + " " + classname.Text;
+            String tekstdozapisu = name.Text + " " + lastname.Text + " " + classname.Text+"\n";
             if (!File.Exists(path))
             {
                 sw = File.CreateText(path);
@@ -79,11 +79,11 @@ namespace SekretariatPAD
 
             while (textRead != null)
             {
-                if(daneUcznia.SelectedIndex==0 && textRead.ToLower().Split(' ')[0].Contains(szukaj.Text)){
-                textRead = sr.ReadLine();
-                richTextBox1.Text += textRead+"/n";
+                richTextBox1.Clear();
+                if(daneUcznia.SelectedIndex==0 && textRead.Split(' ')[0].ToLower().Contains(szukaj.Text.ToString())){
+                richTextBox1.Text += textRead+"\n";
                 }
-                
+                textRead = sr.ReadLine(); 
             }
 
             /*if (daneUcznia.SelectedItem.Equals("Imie"))
