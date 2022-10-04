@@ -32,7 +32,7 @@ namespace SekretariatPAD
         {
             
             StreamWriter sw;
-            String tekstdozapisu = name.Text + " " + lastname.Text + " " + classname.Text+"\n";
+            String tekstdozapisu = name.Text + " " + lastname.Text + " " + classname.Text;
             if (!File.Exists(path))
             {
                 sw = File.CreateText(path);
@@ -76,34 +76,60 @@ namespace SekretariatPAD
             }
             String textRead = sr.ReadLine();
             //richTextBox1.Text = textRead;
+            String filter = szukaj.Text.ToString();
 
-            while (textRead != null)
+            /*while (textRead != null)
             {
                 richTextBox1.Clear();
-                if(daneUcznia.SelectedIndex==0 && textRead.Split(' ')[0].ToLower().Contains(szukaj.Text.ToString())){
-                richTextBox1.Text += textRead+"\n";
+                if(daneUcznia.SelectedIndex==0 && textRead.Split(' ')[0].ToLower().StartsWith(filter.ToLower())){
+                
+                richTextBox1.Text += textRead + "\n";
                 }
-                textRead = sr.ReadLine(); 
-            }
+                textRead = sr.ReadLine();
 
-            /*if (daneUcznia.SelectedItem.Equals("Imie"))
+            }*/
+            richTextBox1.Clear();
+            if (daneUcznia.SelectedItem.Equals("Imię"))
             {
-                I = szukaj.Text;
+                String imiona = textRead.Split(' ')[0];
                 
-                if (true)
+                /*if (imiona.StartsWith(filter.ToLower()))
                 {
-                    richTextBox1.Text = I;
+
+                }*/
+                if (kryterium.SelectedItem.Equals("równe"))
+                {
+                    MessageBox.Show("błąd1");
                 }
-                
+                else if (kryterium.SelectedItem.Equals("zawiera"))
+                {
+                    MessageBox.Show("błąd");
+                }
+                else if (kryterium.SelectedItem.Equals("zaczyna się od"))
+                {
+                    if (imiona.StartsWith(filter.ToLower()))
+                    {
+                        for (int i = 0; i < 10; ++i)
+                        {
+                            textRead = sr.ReadLine();
+                            richTextBox1.Text += textRead + "\n";
+                        }
+                        // richTextBox1.Text += textRead + "\n";
+                        // textRead = sr.ReadLine();
+                    }
+                }
+                // MessageBox.Show("wybrałeś imie");
             }
             else if (daneUcznia.SelectedItem.Equals("Nazwisko"))
             {
-                N = szukaj.Text;
+                String nazwiska = textRead.Split(' ')[1];
+                MessageBox.Show("wybrałeś nazwisko");
             }
             else if (daneUcznia.SelectedItem.Equals("Klasa"))
             {
-                K = szukaj.Text;
-            }*/
+                String klasy = textRead.Split(' ')[2];
+                MessageBox.Show("wybrałeś klase");
+            }
             sr.Close();
         }
     }
