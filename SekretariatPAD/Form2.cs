@@ -65,16 +65,26 @@ namespace SekretariatPAD
 
         private void search_Click(object sender, EventArgs e)
         {
+            
             if (File.Exists(path))
             {
-                sr = new StreamReader(path, true);
+                sr = new StreamReader(path);
             }
             else
             {
                 MessageBox.Show("Pliku nie ma");
             }
-            String textRead = sr.ReadToEnd();
-            richTextBox1.Text = textRead;
+            String textRead = sr.ReadLine();
+            //richTextBox1.Text = textRead;
+
+            while (textRead != null)
+            {
+                if(daneUcznia.SelectedIndex==0 && textRead.ToLower().Split(' ')[0].Contains(szukaj.Text)){
+                textRead = sr.ReadLine();
+                richTextBox1.Text += textRead+"/n";
+                }
+                
+            }
 
             /*if (daneUcznia.SelectedItem.Equals("Imie"))
             {
