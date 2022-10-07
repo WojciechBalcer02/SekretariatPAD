@@ -89,34 +89,52 @@ namespace SekretariatPAD
 
             }*/
             richTextBox1.Clear();
+            
             if (daneUcznia.SelectedItem.Equals("Imię"))
             {
-                String imiona = textRead.Split(' ')[0];
                 
-                /*if (imiona.StartsWith(filter.ToLower()))
-                {
+                //imiona += textRead.Split(' ')[0];
+                    /*if (imiona.StartsWith(filter.ToLower()))
+                    {
 
-                }*/
+                    }*/
                 if (kryterium.SelectedItem.Equals("równe"))
                 {
-                    MessageBox.Show("błąd1");
+                   while (!sr.EndOfStream)
+                {
+                        textRead = sr.ReadLine();
+                        String imiona = textRead.Split(' ')[0];
+                        if (imiona.StartsWith(filter))
+                        {
+                            
+                            richTextBox1.Text += imiona + "\n";
+                        }
+                        else
+                        {
+                            MessageBox.Show("nie działa");
+                        }
+                } 
                 }
                 else if (kryterium.SelectedItem.Equals("zawiera"))
                 {
-                    MessageBox.Show("błąd");
+                    while (!sr.EndOfStream)
+                    {
+                        String imiona = textRead.Split(' ')[0];
+                        textRead = sr.ReadLine();
+                        richTextBox1.Text += imiona + "\n";
+                    }
                 }
                 else if (kryterium.SelectedItem.Equals("zaczyna się od"))
                 {
-                    if (imiona.StartsWith(filter.ToLower()))
+                    while (!sr.EndOfStream)
                     {
-                        for (int i = 0; i < 10; ++i)
-                        {
-                            textRead = sr.ReadLine();
-                            richTextBox1.Text += textRead + "\n";
-                        }
-                        // richTextBox1.Text += textRead + "\n";
-                        // textRead = sr.ReadLine();
+                        String imiona = textRead.Split(' ')[0];
+                        textRead = sr.ReadLine();
+                        richTextBox1.Text += imiona + "\n";
                     }
+
+
+
                 }
                 // MessageBox.Show("wybrałeś imie");
             }
