@@ -15,9 +15,6 @@ namespace SekretariatPAD
     {
         string path = @"uczen.txt";
         StreamReader sr;
-        String I;
-        String N;
-        String K;
         public Form2()
         {
             InitializeComponent();
@@ -75,19 +72,10 @@ namespace SekretariatPAD
                 MessageBox.Show("Pliku nie ma");
             }
             String textRead = sr.ReadLine();
-            //richTextBox1.Text = textRead;
+ 
             String filter = szukaj.Text.ToString();
 
-            /*while (textRead != null)
-            {
-                richTextBox1.Clear();
-                if(daneUcznia.SelectedIndex==0 && textRead.Split(' ')[0].ToLower().StartsWith(filter.ToLower())){
-                
-                richTextBox1.Text += textRead + "\n";
-                }
-                textRead = sr.ReadLine();
-
-            }*/
+           
             richTextBox1.Clear();
             
             if (daneUcznia.SelectedItem.Equals("Imię"))
@@ -134,7 +122,6 @@ namespace SekretariatPAD
 
 
                 }
-                // MessageBox.Show("wybrałeś imie");
             }
             else if (daneUcznia.SelectedItem.Equals("Nazwisko"))
             {
