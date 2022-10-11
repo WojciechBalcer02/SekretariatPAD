@@ -98,7 +98,7 @@ namespace SekretariatPAD
                     {
 
                     }*/
-                if (kryterium.SelectedItem.Equals("równe"))
+                if (kryterium.SelectedItem.Equals("zaczyna się od"))
                 {
                    while (!sr.EndOfStream)
                 {
@@ -106,8 +106,7 @@ namespace SekretariatPAD
                         String imiona = textRead.Split(' ')[0];
                         if (imiona.StartsWith(filter))
                         {
-                            
-                            richTextBox1.Text += imiona + "\n";
+                            richTextBox1.Text += textRead + "\n";
                         }
                         
                 } 
@@ -116,18 +115,25 @@ namespace SekretariatPAD
                 {
                     while (!sr.EndOfStream)
                     {
-                        String imiona = textRead.Split(' ')[0];
                         textRead = sr.ReadLine();
-                        richTextBox1.Text += imiona + "\n";
+                        String imiona = textRead.Split(' ')[0];
+                        if (imiona.Contains(filter))
+                        {
+
+                            richTextBox1.Text += textRead + "\n";
+                        }
                     }
                 }
-                else if (kryterium.SelectedItem.Equals("zaczyna się od"))
+                else if (kryterium.SelectedItem.Equals("równe"))
                 {
                     while (!sr.EndOfStream)
                     {
-                        String imiona = textRead.Split(' ')[0];
                         textRead = sr.ReadLine();
-                        richTextBox1.Text += imiona + "\n";
+                        String imiona = textRead.Split(' ')[0];
+                        if (imiona.Equals(filter))
+                        {
+                            richTextBox1.Text += textRead + "\n";
+                        }
                     }
 
 
