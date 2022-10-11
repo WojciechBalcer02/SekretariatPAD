@@ -109,10 +109,7 @@ namespace SekretariatPAD
                             
                             richTextBox1.Text += imiona + "\n";
                         }
-                        else
-                        {
-                            MessageBox.Show("nie działa");
-                        }
+                        
                 } 
                 }
                 else if (kryterium.SelectedItem.Equals("zawiera"))
