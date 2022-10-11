@@ -182,8 +182,47 @@ namespace SekretariatPAD
             }
             else if (daneUcznia.SelectedItem.Equals("Klasa"))
             {
-                String klasy = textRead.Split(' ')[2];
-                MessageBox.Show("wybrałeś klase");
+                if (kryterium.SelectedItem.Equals("zaczyna się od"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        textRead = sr.ReadLine();
+                        String klasa = textRead.Split(' ')[2].ToLower();
+                        if (klasa.StartsWith(filter.ToLower()))
+                        {
+                            richTextBox1.Text += textRead + "\n";
+                        }
+
+                    }
+                }
+                else if (kryterium.SelectedItem.Equals("zawiera"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        textRead = sr.ReadLine();
+                        String klasa = textRead.Split(' ')[2].ToLower();
+                        if (klasa.Contains(filter.ToLower()))
+                        {
+
+                            richTextBox1.Text += textRead + "\n";
+                        }
+                    }
+                }
+                else if (kryterium.SelectedItem.Equals("równe"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        textRead = sr.ReadLine();
+                        String klasa = textRead.Split(' ')[2].ToLower();
+                        if (klasa.Equals(filter.ToLower()))
+                        {
+                            richTextBox1.Text += textRead + "\n";
+                        }
+                    }
+
+
+
+                }
             }
             sr.Close();
         }
