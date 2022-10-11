@@ -93,18 +93,13 @@ namespace SekretariatPAD
             if (daneUcznia.SelectedItem.Equals("Imię"))
             {
                 
-                //imiona += textRead.Split(' ')[0];
-                    /*if (imiona.StartsWith(filter.ToLower()))
-                    {
-
-                    }*/
                 if (kryterium.SelectedItem.Equals("zaczyna się od"))
                 {
                    while (!sr.EndOfStream)
                 {
                         textRead = sr.ReadLine();
-                        String imiona = textRead.Split(' ')[0];
-                        if (imiona.StartsWith(filter))
+                        String imiona = textRead.Split(' ')[0].ToLower();
+                        if (imiona.StartsWith(filter.ToLower()))
                         {
                             richTextBox1.Text += textRead + "\n";
                         }
@@ -116,8 +111,8 @@ namespace SekretariatPAD
                     while (!sr.EndOfStream)
                     {
                         textRead = sr.ReadLine();
-                        String imiona = textRead.Split(' ')[0];
-                        if (imiona.Contains(filter))
+                        String imiona = textRead.Split(' ')[0].ToLower();
+                        if (imiona.Contains(filter.ToLower()))
                         {
 
                             richTextBox1.Text += textRead + "\n";
@@ -129,8 +124,8 @@ namespace SekretariatPAD
                     while (!sr.EndOfStream)
                     {
                         textRead = sr.ReadLine();
-                        String imiona = textRead.Split(' ')[0];
-                        if (imiona.Equals(filter))
+                        String imiona = textRead.Split(' ')[0].ToLower();
+                        if (imiona.Equals(filter.ToLower()))
                         {
                             richTextBox1.Text += textRead + "\n";
                         }
@@ -143,8 +138,47 @@ namespace SekretariatPAD
             }
             else if (daneUcznia.SelectedItem.Equals("Nazwisko"))
             {
-                String nazwiska = textRead.Split(' ')[1];
-                MessageBox.Show("wybrałeś nazwisko");
+                if (kryterium.SelectedItem.Equals("zaczyna się od"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        textRead = sr.ReadLine();
+                        String nazwisko = textRead.Split(' ')[1].ToLower();
+                        if (nazwisko.StartsWith(filter.ToLower()))
+                        {
+                            richTextBox1.Text += textRead + "\n";
+                        }
+
+                    }
+                }
+                else if (kryterium.SelectedItem.Equals("zawiera"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        textRead = sr.ReadLine();
+                        String nazwisko = textRead.Split(' ')[1].ToLower();
+                        if (nazwisko.Contains(filter.ToLower()))
+                        {
+
+                            richTextBox1.Text += textRead + "\n";
+                        }
+                    }
+                }
+                else if (kryterium.SelectedItem.Equals("równe"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        textRead = sr.ReadLine();
+                        String nazwisko = textRead.Split(' ')[1].ToLower();
+                        if (nazwisko.Equals(filter.ToLower()))
+                        {
+                            richTextBox1.Text += textRead + "\n";
+                        }
+                    }
+
+
+
+                }
             }
             else if (daneUcznia.SelectedItem.Equals("Klasa"))
             {
