@@ -60,9 +60,9 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.uczniowieBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.imieTextBox = new System.Windows.Forms.TextBox();
-            this.nazwiskoTextBox = new System.Windows.Forms.TextBox();
-            this.klasaTextBox = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
+            this.lastname = new System.Windows.Forms.TextBox();
+            this.classname = new System.Windows.Forms.TextBox();
             imieLabel = new System.Windows.Forms.Label();
             nazwiskoLabel = new System.Windows.Forms.Label();
             klasaLabel = new System.Windows.Forms.Label();
@@ -163,11 +163,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(imieLabel);
-            this.tabPage2.Controls.Add(this.imieTextBox);
+            this.tabPage2.Controls.Add(this.name);
             this.tabPage2.Controls.Add(nazwiskoLabel);
-            this.tabPage2.Controls.Add(this.nazwiskoTextBox);
+            this.tabPage2.Controls.Add(this.lastname);
             this.tabPage2.Controls.Add(klasaLabel);
-            this.tabPage2.Controls.Add(this.klasaTextBox);
+            this.tabPage2.Controls.Add(this.classname);
             this.tabPage2.Controls.Add(this.add);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -266,6 +266,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Pozycja";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -274,14 +275,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 15);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 22);
             this.bindingNavigatorCountItem.Text = "z {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Suma elementów";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -289,7 +290,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Przenieś następny";
             // 
             // bindingNavigatorMoveLastItem
@@ -298,13 +299,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Przenieś ostatni";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -321,7 +322,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Usuń";
             // 
             // uczniowieBindingNavigatorSaveItem
@@ -329,7 +330,7 @@
             this.uczniowieBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.uczniowieBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("uczniowieBindingNavigatorSaveItem.Image")));
             this.uczniowieBindingNavigatorSaveItem.Name = "uczniowieBindingNavigatorSaveItem";
-            this.uczniowieBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.uczniowieBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.uczniowieBindingNavigatorSaveItem.Text = "Zapisz dane";
             this.uczniowieBindingNavigatorSaveItem.Click += new System.EventHandler(this.uczniowieBindingNavigatorSaveItem_Click);
             // 
@@ -344,13 +345,13 @@
             imieLabel.Text = "imie:";
             imieLabel.Click += new System.EventHandler(this.imieLabel_Click);
             // 
-            // imieTextBox
+            // name
             // 
-            this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "imie", true));
-            this.imieTextBox.Location = new System.Drawing.Point(271, 142);
-            this.imieTextBox.Name = "imieTextBox";
-            this.imieTextBox.Size = new System.Drawing.Size(241, 20);
-            this.imieTextBox.TabIndex = 8;
+            this.name.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "imie", true));
+            this.name.Location = new System.Drawing.Point(271, 142);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(241, 20);
+            this.name.TabIndex = 8;
             // 
             // nazwiskoLabel
             // 
@@ -362,13 +363,13 @@
             nazwiskoLabel.TabIndex = 9;
             nazwiskoLabel.Text = "nazwisko:";
             // 
-            // nazwiskoTextBox
+            // lastname
             // 
-            this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "nazwisko", true));
-            this.nazwiskoTextBox.Location = new System.Drawing.Point(271, 168);
-            this.nazwiskoTextBox.Name = "nazwiskoTextBox";
-            this.nazwiskoTextBox.Size = new System.Drawing.Size(241, 20);
-            this.nazwiskoTextBox.TabIndex = 10;
+            this.lastname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "nazwisko", true));
+            this.lastname.Location = new System.Drawing.Point(271, 168);
+            this.lastname.Name = "lastname";
+            this.lastname.Size = new System.Drawing.Size(241, 20);
+            this.lastname.TabIndex = 10;
             // 
             // klasaLabel
             // 
@@ -380,13 +381,13 @@
             klasaLabel.TabIndex = 11;
             klasaLabel.Text = "klasa:";
             // 
-            // klasaTextBox
+            // classname
             // 
-            this.klasaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "klasa", true));
-            this.klasaTextBox.Location = new System.Drawing.Point(271, 194);
-            this.klasaTextBox.Name = "klasaTextBox";
-            this.klasaTextBox.Size = new System.Drawing.Size(241, 20);
-            this.klasaTextBox.TabIndex = 12;
+            this.classname.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "klasa", true));
+            this.classname.Location = new System.Drawing.Point(271, 194);
+            this.classname.Name = "classname";
+            this.classname.Size = new System.Drawing.Size(241, 20);
+            this.classname.TabIndex = 12;
             // 
             // Form2
             // 
@@ -446,8 +447,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton uczniowieBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox imieTextBox;
-        private System.Windows.Forms.TextBox nazwiskoTextBox;
-        private System.Windows.Forms.TextBox klasaTextBox;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.TextBox lastname;
+        private System.Windows.Forms.TextBox classname;
     }
 }
