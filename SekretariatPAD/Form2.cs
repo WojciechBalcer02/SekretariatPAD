@@ -228,5 +228,10 @@ namespace SekretariatPAD
             this.uczniowieTableAdapter.Fill(this.database2DataSet2.uczniowie);
 
         }
+
+        private void imieLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

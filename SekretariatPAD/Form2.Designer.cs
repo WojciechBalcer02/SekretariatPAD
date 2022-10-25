@@ -43,12 +43,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.add = new System.Windows.Forms.Button();
-            this.classname = new System.Windows.Forms.TextBox();
-            this.lastname = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.klasa = new System.Windows.Forms.Label();
-            this.nazwisko = new System.Windows.Forms.Label();
-            this.imie = new System.Windows.Forms.Label();
             this.database2DataSet2 = new SekretariatPAD.Database2DataSet2();
             this.uczniowieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uczniowieTableAdapter = new SekretariatPAD.Database2DataSet2TableAdapters.uczniowieTableAdapter();
@@ -175,12 +169,6 @@
             this.tabPage2.Controls.Add(klasaLabel);
             this.tabPage2.Controls.Add(this.klasaTextBox);
             this.tabPage2.Controls.Add(this.add);
-            this.tabPage2.Controls.Add(this.classname);
-            this.tabPage2.Controls.Add(this.lastname);
-            this.tabPage2.Controls.Add(this.name);
-            this.tabPage2.Controls.Add(this.klasa);
-            this.tabPage2.Controls.Add(this.nazwisko);
-            this.tabPage2.Controls.Add(this.imie);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -199,58 +187,6 @@
             this.add.Text = "Dodaj";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
-            // 
-            // classname
-            // 
-            this.classname.Location = new System.Drawing.Point(243, 171);
-            this.classname.Name = "classname";
-            this.classname.Size = new System.Drawing.Size(299, 20);
-            this.classname.TabIndex = 5;
-            // 
-            // lastname
-            // 
-            this.lastname.Location = new System.Drawing.Point(243, 125);
-            this.lastname.Name = "lastname";
-            this.lastname.Size = new System.Drawing.Size(299, 20);
-            this.lastname.TabIndex = 4;
-            // 
-            // name
-            // 
-            this.name.Location = new System.Drawing.Point(243, 73);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(299, 20);
-            this.name.TabIndex = 3;
-            this.name.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // klasa
-            // 
-            this.klasa.AutoSize = true;
-            this.klasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.klasa.Location = new System.Drawing.Point(98, 171);
-            this.klasa.Name = "klasa";
-            this.klasa.Size = new System.Drawing.Size(51, 20);
-            this.klasa.TabIndex = 2;
-            this.klasa.Text = "klasa";
-            // 
-            // nazwisko
-            // 
-            this.nazwisko.AutoSize = true;
-            this.nazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nazwisko.Location = new System.Drawing.Point(98, 125);
-            this.nazwisko.Name = "nazwisko";
-            this.nazwisko.Size = new System.Drawing.Size(84, 20);
-            this.nazwisko.TabIndex = 1;
-            this.nazwisko.Text = "Nazwisko";
-            // 
-            // imie
-            // 
-            this.imie.AutoSize = true;
-            this.imie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.imie.Location = new System.Drawing.Point(98, 73);
-            this.imie.Name = "imie";
-            this.imie.Size = new System.Drawing.Size(43, 20);
-            this.imie.TabIndex = 0;
-            this.imie.Text = "Imię";
             // 
             // database2DataSet2
             // 
@@ -400,52 +336,56 @@
             // imieLabel
             // 
             imieLabel.AutoSize = true;
-            imieLabel.Location = new System.Drawing.Point(127, 246);
+            imieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            imieLabel.Location = new System.Drawing.Point(224, 140);
             imieLabel.Name = "imieLabel";
-            imieLabel.Size = new System.Drawing.Size(28, 13);
+            imieLabel.Size = new System.Drawing.Size(41, 20);
             imieLabel.TabIndex = 7;
             imieLabel.Text = "imie:";
+            imieLabel.Click += new System.EventHandler(this.imieLabel_Click);
             // 
             // imieTextBox
             // 
             this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "imie", true));
-            this.imieTextBox.Location = new System.Drawing.Point(187, 243);
+            this.imieTextBox.Location = new System.Drawing.Point(271, 142);
             this.imieTextBox.Name = "imieTextBox";
-            this.imieTextBox.Size = new System.Drawing.Size(100, 20);
+            this.imieTextBox.Size = new System.Drawing.Size(241, 20);
             this.imieTextBox.TabIndex = 8;
             // 
             // nazwiskoLabel
             // 
             nazwiskoLabel.AutoSize = true;
-            nazwiskoLabel.Location = new System.Drawing.Point(127, 272);
+            nazwiskoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            nazwiskoLabel.Location = new System.Drawing.Point(187, 168);
             nazwiskoLabel.Name = "nazwiskoLabel";
-            nazwiskoLabel.Size = new System.Drawing.Size(54, 13);
+            nazwiskoLabel.Size = new System.Drawing.Size(78, 20);
             nazwiskoLabel.TabIndex = 9;
             nazwiskoLabel.Text = "nazwisko:";
             // 
             // nazwiskoTextBox
             // 
             this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "nazwisko", true));
-            this.nazwiskoTextBox.Location = new System.Drawing.Point(187, 269);
+            this.nazwiskoTextBox.Location = new System.Drawing.Point(271, 168);
             this.nazwiskoTextBox.Name = "nazwiskoTextBox";
-            this.nazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nazwiskoTextBox.Size = new System.Drawing.Size(241, 20);
             this.nazwiskoTextBox.TabIndex = 10;
             // 
             // klasaLabel
             // 
             klasaLabel.AutoSize = true;
-            klasaLabel.Location = new System.Drawing.Point(127, 298);
+            klasaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            klasaLabel.Location = new System.Drawing.Point(215, 194);
             klasaLabel.Name = "klasaLabel";
-            klasaLabel.Size = new System.Drawing.Size(35, 13);
+            klasaLabel.Size = new System.Drawing.Size(50, 20);
             klasaLabel.TabIndex = 11;
             klasaLabel.Text = "klasa:";
             // 
             // klasaTextBox
             // 
             this.klasaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uczniowieBindingSource, "klasa", true));
-            this.klasaTextBox.Location = new System.Drawing.Point(187, 295);
+            this.klasaTextBox.Location = new System.Drawing.Point(271, 194);
             this.klasaTextBox.Name = "klasaTextBox";
-            this.klasaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.klasaTextBox.Size = new System.Drawing.Size(241, 20);
             this.klasaTextBox.TabIndex = 12;
             // 
             // Form2
@@ -482,12 +422,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label klasa;
-        private System.Windows.Forms.Label nazwisko;
-        private System.Windows.Forms.Label imie;
-        private System.Windows.Forms.TextBox lastname;
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox classname;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button search;
