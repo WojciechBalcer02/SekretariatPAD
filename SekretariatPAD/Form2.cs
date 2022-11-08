@@ -207,5 +207,25 @@ namespace SekretariatPAD
                 sr.Close();
             }
         }
+
+        private void uczniowieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.uczniowieBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database2DataSet2);
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'database2DataSet2.uczniowie' . Możesz go przenieść lub usunąć.
+            this.uczniowieTableAdapter.Fill(this.database2DataSet2.uczniowie);
+
+        }
+
+        private void imieLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
