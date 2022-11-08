@@ -18,7 +18,7 @@ namespace SekretariatPAD
         public Form2()
         {
             InitializeComponent();
-            
+
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace SekretariatPAD
 
         private void add_Click(object sender, EventArgs e)
         {
-            
+
             StreamWriter sw;
             String tekstdozapisu = name.Text + " " + lastname.Text + " " + classname.Text;
             if (!File.Exists(path))
@@ -42,17 +42,17 @@ namespace SekretariatPAD
             }
             sw.WriteLine(tekstdozapisu);
             sw.Close();
-            
+
         }
 
         private void Form2_Shown(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
+
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
@@ -62,7 +62,7 @@ namespace SekretariatPAD
 
         private void search_Click(object sender, EventArgs e)
         {
-            
+
             if (File.Exists(path))
             {
                 sr = new StreamReader(path);
@@ -72,27 +72,27 @@ namespace SekretariatPAD
                 MessageBox.Show("Pliku nie ma");
             }
             String textRead = sr.ReadLine();
- 
+
             String filter = szukaj.Text.ToString();
 
-           
+
             richTextBox1.Clear();
-            
+
             if (daneUcznia.SelectedItem.Equals("Imię"))
             {
-                
+
                 if (kryterium.SelectedItem.Equals("zaczyna się od"))
                 {
-                   while (!sr.EndOfStream)
-                {
+                    while (!sr.EndOfStream)
+                    {
                         textRead = sr.ReadLine();
                         String imiona = textRead.Split(' ')[0].ToLower();
                         if (imiona.StartsWith(filter.ToLower()))
                         {
                             richTextBox1.Text += textRead + "\n";
                         }
-                        
-                } 
+
+                    }
                 }
                 else if (kryterium.SelectedItem.Equals("zawiera"))
                 {
@@ -162,9 +162,6 @@ namespace SekretariatPAD
                             richTextBox1.Text += textRead + "\n";
                         }
                     }
-
-
-
                 }
             }
             else if (daneUcznia.SelectedItem.Equals("Klasa"))
@@ -206,12 +203,9 @@ namespace SekretariatPAD
                             richTextBox1.Text += textRead + "\n";
                         }
                     }
-
-
-
                 }
+                sr.Close();
             }
-            sr.Close();
         }
     }
 }
